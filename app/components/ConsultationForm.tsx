@@ -1,15 +1,6 @@
-"use client";
-
-import { FormEvent, useState } from "react";
-
 export function ConsultationForm() {
-  const [status, setStatus] = useState("");
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("Your information has not been transmitted. Secure delivery will be activated after MHG confirms the receiving inbox for this concept.");
-  }
   return (
-    <form className="consultation-form" onSubmit={handleSubmit} aria-describedby="form-note form-status">
+    <form className="consultation-form" aria-describedby="form-note">
       <div className="form-grid">
         <label>Name <span aria-hidden="true">*</span><input name="name" autoComplete="name" required /></label>
         <label>Restaurant <input name="restaurant" autoComplete="organization" /></label>
@@ -20,9 +11,8 @@ export function ConsultationForm() {
         <label className="form-wide">Primary challenge <select name="challenge" defaultValue=""><option value="" disabled>Select the closest fit</option><option>Operational consistency</option><option>Leadership and accountability</option><option>Profitability and costs</option><option>Growth and multi-unit systems</option><option>Turnaround or stabilization</option><option>New restaurant opening</option><option>Other</option></select></label>
         <label className="form-wide">Tell us what is happening <span aria-hidden="true">*</span><textarea name="message" rows={6} required /></label>
       </div>
-      <p id="form-note" className="form-note">Fields marked * are required. Concept-stage form delivery will be connected to MHG’s approved inbox before public launch.</p>
-      <button className="button" type="submit">Request a Consultation <span aria-hidden="true">→</span></button>
-      <p id="form-status" className="form-status" aria-live="polite">{status}</p>
+      <p id="form-note" className="form-note">Online consultation requests are being activated. Until MHG confirms its receiving inbox, this form will not collect or transmit information.</p>
+      <button className="button" type="button" disabled>Online Requests Opening Soon</button>
     </form>
   );
 }

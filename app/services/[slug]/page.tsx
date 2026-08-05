@@ -16,7 +16,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; const service = serviceMap[slug]; if (!service) notFound();
   const related = service.related.map((relatedSlug) => serviceMap[relatedSlug]).filter(Boolean);
+  const searchFaqs = service.slug === "restaurant-executive-search" ? [
+    { question: "Does MHG provide restaurant headhunting services?", answer: "Yes. MHG provides targeted restaurant executive search and management recruitment for critical operating roles. The work goes beyond posting a position: it defines the leadership need, identifies relevant talent, evaluates operating fit, and supports a disciplined selection process." },
+    { question: "Which restaurant leadership roles can MHG help recruit?", answer: "Searches may include general managers, executive chefs and culinary leaders, directors of operations, multi-unit leaders, opening leaders, and senior restaurant executives. The exact scope depends on the organization, market, role urgency, and leadership requirements." },
+    { question: "Does MHG guarantee a placement or a candidate’s performance?", answer: "No responsible search partner can guarantee a hire or future performance. MHG strengthens the role definition, sourcing, screening, interview, and selection process so ownership can make a more informed decision." },
+  ] : [];
   const faqs = [
+    ...searchFaqs,
     { question: `What does ${service.name} include?`, answer: `The scope is built around the operating need and may include ${service.deliverables.join(", ").toLowerCase()}. Every engagement defines priorities, ownership, implementation support, and the measures used to review progress.` },
     { question: `Who is ${service.name} designed for?`, answer: `This work is most relevant for ${service.audience.join(", ").toLowerCase()}. Fit depends on the operating issue, leadership capacity, urgency, and the result ownership needs to create.` },
     { question: `How does a ${service.name} engagement begin?`, answer: "The work begins with a focused consultation followed by the operating context required to define scope. MHG then assesses the current reality, identifies the highest-value priorities, and proposes a practical engagement structure." },

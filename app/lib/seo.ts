@@ -24,7 +24,7 @@ export const audiences: AudiencePage[] = [
       { title: "Strengthen the economics", text: "Give managers practical ownership of labor, food cost, waste, and weekly performance." },
       { title: "Build the next layer of leadership", text: "Develop managers who can lead the restaurant—not simply cover the schedule." },
     ],
-    services: ["restaurant-operations-consulting", "profitability-improvement", "leadership-development", "operational-assessments"],
+    services: ["restaurant-operations-consulting", "profitability-improvement", "leadership-development", "restaurant-executive-search"],
     faqs: [
       { question: "When should an independent restaurant hire an operations consultant?", answer: "An outside operating perspective becomes useful when ownership is repeatedly solving the same problems, profitability does not reflect sales, manager accountability is unclear, or growth is being delayed by owner dependence." },
       { question: "Will consulting make an independent restaurant feel corporate?", answer: "It should not. MHG builds only the structure needed to protect quality, accountability, and consistency. The objective is to preserve the restaurant’s identity while making execution less dependent on individual memory or heroics." },
@@ -43,7 +43,7 @@ export const audiences: AudiencePage[] = [
       { title: "See performance early", text: "Connect scorecards, operating reviews, and escalation paths to action before problems compound." },
       { title: "Scale leadership capacity", text: "Clarify what changes as a leader moves from one restaurant to several." },
     ],
-    services: ["multi-unit-operations", "fractional-coo-services", "training-development", "profitability-improvement"],
+    services: ["multi-unit-operations", "fractional-coo-services", "restaurant-executive-search", "profitability-improvement"],
     faqs: [
       { question: "What changes when a restaurant company becomes multi-unit?", answer: "The business needs clearer decision rights, common operating measures, repeatable training, field leadership routines, and a dependable way to identify performance drift across locations." },
       { question: "Can MHG help standardize locations without ignoring local differences?", answer: "Yes. The work separates non-negotiable brand and operating standards from decisions that should remain with the local leader based on market, staffing, or building conditions." },
@@ -62,7 +62,7 @@ export const audiences: AudiencePage[] = [
       { title: "Build an executable value-creation plan", text: "Translate investment priorities into work the restaurant leadership team can own." },
       { title: "Create useful reporting", text: "Connect investor visibility to the leading operating indicators that managers can influence." },
     ],
-    services: ["operational-assessments", "restaurant-turnarounds", "fractional-coo-services", "multi-unit-operations"],
+    services: ["operational-assessments", "restaurant-turnarounds", "fractional-coo-services", "restaurant-executive-search"],
     faqs: [
       { question: "What does an operational assessment add beyond financial diligence?", answer: "It examines the management behaviors, controls, workflows, training, and guest-facing execution that create financial performance. It helps explain the operating causes behind the numbers." },
       { question: "Can MHG support execution after an assessment?", answer: "Yes. Assessment findings can move into implementation support, a focused turnaround, leadership development, or a Fractional COO engagement depending on the situation." },
@@ -81,7 +81,7 @@ export const audiences: AudiencePage[] = [
       { title: "Build field accountability", text: "Create productive routines between ownership, multi-unit leaders, and general managers." },
       { title: "Prepare for responsible growth", text: "Confirm that leadership and operating systems can support another location." },
     ],
-    services: ["multi-unit-operations", "labor-optimization", "profitability-improvement", "leadership-development"],
+    services: ["multi-unit-operations", "labor-optimization", "profitability-improvement", "restaurant-executive-search"],
     faqs: [
       { question: "How does MHG work within franchise requirements?", answer: "MHG treats the franchisor’s standards and approved systems as operating requirements. The focus is the franchisee’s leadership, routines, cost ownership, and consistency within that framework." },
       { question: "Can MHG help a franchisee prepare for additional units?", answer: "Yes. The work can assess leadership depth, multi-unit routines, training capacity, performance visibility, and the owner’s ability to manage a larger organization." },
@@ -100,7 +100,7 @@ export const audiences: AudiencePage[] = [
       { title: "Make training transferable", text: "Build role-based systems that prepare new people without relying on one expert trainer." },
       { title: "Sequence growth responsibly", text: "Align openings and expansion with the organization’s real leadership and operating capacity." },
     ],
-    services: ["new-restaurant-openings", "multi-unit-operations", "training-development", "fractional-coo-services"],
+    services: ["new-restaurant-openings", "multi-unit-operations", "restaurant-executive-search", "fractional-coo-services"],
     faqs: [
       { question: "How do we know if a restaurant is ready for a second location?", answer: "Readiness requires more than demand or capital. The original unit should demonstrate stable performance, capable leadership, transferable standards, management visibility, and the ability to operate without constant founder intervention." },
       { question: "What should be standardized before growth?", answer: "Core guest and product standards, manager routines, training, cost controls, reporting definitions, decision rights, and the opening-to-steady-state transition should all be clear enough to teach and inspect." },

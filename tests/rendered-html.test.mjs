@@ -45,6 +45,15 @@ test("exports detailed service architecture", async () => {
   assert.match(html, /BreadcrumbList/);
 });
 
+test("exports restaurant executive search and management recruitment", async () => {
+  const html = await readOutput("/services/restaurant-executive-search");
+  assert.match(html, /Restaurant Executive Search &amp; Management Recruitment/);
+  assert.match(html, /restaurant headhunting services/i);
+  assert.match(html, /general managers/i);
+  assert.match(html, /targeted search and confidential candidate outreach/i);
+  assert.match(html, /FAQPage/);
+});
+
 test("exports audience, regional, and insight authority pages", async () => {
   for (const path of ["/who-we-help/independent-restaurants", "/locations/texas", "/insights/improve-restaurant-operations"]) {
     const html = await readOutput(path);

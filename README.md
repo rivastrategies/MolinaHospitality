@@ -1,10 +1,10 @@
 # Molina Hospitality Group
 
-Production website for Molina Hospitality Group, a boutique hospitality consulting firm serving restaurant owners, operators, and leadership teams across Texas and the Gulf Coast. The site is statically generated and automatically published with GitHub Pages.
+Official website for Molina Hospitality Group, a boutique hospitality consulting firm serving restaurant owners, operators, and leadership teams across Texas and the Gulf Coast. The site is statically generated and automatically published with GitHub Pages.
 
 ## Website scope
 
-- Detailed service pages for restaurant operations, fractional COO leadership, turnarounds, openings, profitability, labor, menu engineering, guest experience, assessments, and training
+- Detailed service pages for restaurant operations, executive search and management recruitment, fractional COO leadership, turnarounds, openings, profitability, labor, menu engineering, guest experience, assessments, and training
 - Audience-specific pages for independent restaurants, multi-unit groups, emerging concepts, investors, and hospitality organizations
 - Regional landing pages supporting Texas and Gulf Coast search visibility
 - Executive insights and long-form hospitality operations content
@@ -35,6 +35,8 @@ The site uses Next.js, React, TypeScript, and Tailwind CSS. Content and route de
 ## Deployment
 
 Every update to `main` runs the GitHub Pages workflow in `.github/workflows/deploy-pages.yml`. The production export is published at `https://rivastrategies.github.io/MolinaHospitality/`.
+
+Version 1.0 launched August 5, 2026.
 
 ## Ownership
 
