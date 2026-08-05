@@ -1,6 +1,8 @@
 import { services, site } from "../lib/site";
 import { audiences, insights, locations } from "../lib/seo";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const lines = [
     `# ${site.name}`,

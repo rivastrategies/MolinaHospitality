@@ -1,6 +1,6 @@
 # Molina Hospitality Group
 
-Production website for Molina Hospitality Group, a boutique hospitality consulting firm serving restaurant owners, operators, and leadership teams across Texas and the Gulf Coast.
+Production website for Molina Hospitality Group, a boutique hospitality consulting firm serving restaurant owners, operators, and leadership teams across Texas and the Gulf Coast. The site is statically generated and automatically published with GitHub Pages.
 
 ## Website scope
 
@@ -20,17 +20,21 @@ npm install
 npm run dev
 ```
 
-To verify a production build:
+To verify the GitHub Pages production export:
 
 ```bash
 npm run lint
-npm run build
+npm run build:pages
 npm test
 ```
 
 ## Technology
 
-The site uses React, TypeScript, Tailwind CSS, and vinext. Content and route definitions live in the repository so the website can be versioned, reviewed, and deployed from GitHub.
+The site uses Next.js, React, TypeScript, and Tailwind CSS. Content and route definitions live in the repository so the website can be versioned, reviewed, and automatically deployed from GitHub.
+
+## Deployment
+
+Every update to `main` runs the GitHub Pages workflow in `.github/workflows/deploy-pages.yml`. The production export is published at `https://rivastrategies.github.io/MolinaHospitality/`.
 
 ## Ownership
 

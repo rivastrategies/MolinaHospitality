@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: { type: "website", locale: "en_US", siteName: site.name, title: "Stronger Restaurants. Stronger Teams. Stronger Results.", description: site.description, url: "/", images: [{ url: "/og.jpg", width: 1200, height: 632, alt: "Molina Hospitality Group — Stronger Restaurants. Stronger Teams. Stronger Results." }] },
   twitter: { card: "summary_large_image", title: "Stronger Restaurants. Stronger Teams. Stronger Results.", description: site.description, images: ["/og.jpg"] },
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  icons: { icon: `${site.url}/favicon.svg`, shortcut: `${site.url}/favicon.svg` },
 };
 
 const organizationSchema = {
