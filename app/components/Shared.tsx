@@ -27,8 +27,8 @@ export function ArrowLink({ href, children }: { href: string; children: React.Re
   return <Link className="text-link" href={href}>{children}<span aria-hidden="true">→</span></Link>;
 }
 
-export function PlaceholderNote({ children }: { children: React.ReactNode }) {
-  return <div className="placeholder-note" role="note"><strong>Content placeholder</strong><p>{children}</p></div>;
+export function ReviewNote({ children }: { children: React.ReactNode }) {
+  return <aside className="review-note" aria-label="Before public launch"><strong>Before public launch</strong><p>{children}</p></aside>;
 }
 
 export function FAQSection({ items, title = "Questions restaurant leaders ask." }: { items: FAQ[]; title?: string }) {

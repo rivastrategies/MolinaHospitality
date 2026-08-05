@@ -18,6 +18,7 @@ test("exports the production home page for GitHub Pages", async () => {
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /href="\/MolinaHospitality\/about\//);
   assert.doesNotMatch(html, /jordanvsmith\.chatgpt\.site/i);
+  assert.doesNotMatch(html, /content placeholder|founder portrait placeholder|staged for backend/i);
 });
 
 test("exports core company routes", async () => {
@@ -25,6 +26,13 @@ test("exports core company routes", async () => {
     const html = await readOutput(path);
     assert.match(html, /<h1\b/i, `${path} should have a primary heading`);
   }
+});
+
+test("presents an approved-fact-only founder story without template language", async () => {
+  const html = await readOutput("/about");
+  assert.match(html, /Built around decades of real restaurant operating experience/);
+  assert.match(html, /Founder-led hospitality counsel/);
+  assert.doesNotMatch(html, /content placeholder|founder portrait|add the founder/i);
 });
 
 test("exports detailed service architecture", async () => {
