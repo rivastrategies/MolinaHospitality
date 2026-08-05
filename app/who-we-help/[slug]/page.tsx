@@ -1,0 +1,14 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { ArrowLink, Breadcrumbs, CTA, Eyebrow, FAQSection, SectionHeader } from "../../components/Shared";
+import { audienceMap, audiences, faqSchema } from "../../lib/seo";
+import { serviceMap, site } from "../../lib/site";
+
+export function generateStaticParams() { return audiences.map((item) => ({ slug: item.slug })); }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const item = audienceMap[slug]; if (!item) return {}; return { title: item.title, description: item.description, alternates: { canonical: `/who-we-help/${slug}` }, openGraph: { title: item.title, description: item.description, url: `/who-we-help/${slug}` } }; }
+
+export default async function AudiencePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; const item = audienceMap[slug]; if (!item) notFound(); const related = item.services.map((key) => serviceMap[key]).filter(Boolean);
+  const pageSchema = { "@context": "https://schema.org", "@type": "WebPage", name: item.title, description: item.description, url: `${site.url}/who-we-help/${slug}`, about: { "@id": `${site.url}/#organization` } };
+  return <><section className="service-hero audience-hero"><div className="shell"><Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Who We Help", href: "/who-we-help" }, { label: item.name }]} /><div className="service-hero-grid"><div><Eyebrow light>Restaurant operating advisory</Eyebrow><h1>{item.title}</h1><p>{item.description}</p></div><aside><span>The operating reality</span><p>{item.reality}</p></aside></div></div></section><section className="section"><div className="shell"><SectionHeader eyebrow="Where the work focuses" title="Build the operation for what ownership needs next." /><div className="priority-grid">{item.priorities.map((priority, index) => <article key={priority.title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{priority.title}</h2><p>{priority.text}</p></article>)}</div></div></section><section className="section section-tint"><div className="shell"><SectionHeader eyebrow="Relevant services" title="The right work depends on the operating cause." /><div className="related-grid four-up">{related.map((service) => <article key={service.slug}><p className="card-kicker">{service.eyebrow}</p><h3>{service.name}</h3><p>{service.summary}</p><ArrowLink href={`/services/${service.slug}`}>Explore service</ArrowLink></article>)}</div></div></section><FAQSection items={item.faqs} /><CTA /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(item.faqs)) }} /></>;
+}

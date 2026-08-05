@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import { ArrowLink, CTA, PageHero, SectionHeader } from "../components/Shared";
+import { insights } from "../lib/seo";
+
+export const metadata: Metadata = { title: "Restaurant Operations Insights", description: "Practical guidance on restaurant operations, leadership, profitability, turnarounds, labor, Fractional COO support, and multi-unit growth.", alternates: { canonical: "/insights" } };
+export default function InsightsPage() { return <><PageHero eyebrow="Operating insights" title="Practical thinking for restaurant leaders." intro="Clear guidance on the operating questions that shape profitability, leadership, consistency, and responsible growth." /><section className="section"><div className="shell"><SectionHeader eyebrow="Field notes" title="Built for decisions—not content volume." intro="These guides are grounded in the practical work of running restaurants. No hype, no invented benchmarks, and no universal answer where context matters." /><div className="insight-grid">{insights.map((insight) => <article key={insight.slug}><p className="card-kicker">{insight.category}</p><h2>{insight.title}</h2><p>{insight.description}</p><ArrowLink href={`/insights/${insight.slug}`}>Read the guide</ArrowLink></article>)}</div></div></section><CTA /></>; }

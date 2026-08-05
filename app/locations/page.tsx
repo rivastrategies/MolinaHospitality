@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import { ArrowLink, CTA, PageHero, SectionHeader } from "../components/Shared";
+import { locations } from "../lib/seo";
+
+export const metadata: Metadata = { title: "Service Areas", description: "Restaurant operations consulting across Texas and the Texas Gulf Coast for independent restaurants, groups, franchisees, and hospitality investors.", alternates: { canonical: "/locations" } };
+export default function LocationsPage() { return <><PageHero eyebrow="Service areas" title="Restaurant Consulting in Texas and the Gulf Coast" intro="MHG brings operator-first consulting to restaurant owners and hospitality groups across Texas, with a long-term focus on the Gulf Coast." /><section className="section"><div className="shell"><SectionHeader eyebrow="Regional support" title="On-site operating perspective. Executive-level follow-through." /><div className="location-index-grid">{locations.map((location) => <article key={location.slug}><p className="card-kicker">Service area</p><h2>{location.name}</h2><p>{location.description}</p><div className="market-tags">{location.markets.slice(0, 5).map((market) => <span key={market}>{market}</span>)}</div><ArrowLink href={`/locations/${location.slug}`}>Explore this service area</ArrowLink></article>)}</div></div></section><CTA /></>; }
