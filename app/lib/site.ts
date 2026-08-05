@@ -3,7 +3,7 @@ export const site = {
   shortName: "MHG",
   description:
     "Restaurant operations consulting and fractional executive leadership for independent operators, multi-unit groups, and hospitality ownership teams.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://rivastrategies.github.io/MolinaHospitality",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://jimmolina.com",
 };
 
 export type Service = {

@@ -34,7 +34,7 @@ The site uses Next.js, React, TypeScript, and Tailwind CSS. Content and route de
 
 ## Deployment
 
-Every update to `main` runs the GitHub Pages workflow in `.github/workflows/deploy-pages.yml`. The production export is published at `https://rivastrategies.github.io/MolinaHospitality/`.
+Every update to `main` runs the GitHub Pages workflow in `.github/workflows/deploy-pages.yml`. The production website is published at `https://jimmolina.com/`, with GitHub Pages providing the hosting and deployment pipeline.
 
 Version 1.0 launched August 5, 2026.
 

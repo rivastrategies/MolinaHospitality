@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const output = new URL("../out/", import.meta.url);
-const siteUrl = "https://rivastrategies.github.io/MolinaHospitality";
+const siteUrl = "https://jimmolina.com";
 
 async function readOutput(path = "/") {
   const relative = path === "/" ? "index.html" : `${path.replace(/^\//, "")}/index.html`;
@@ -16,7 +16,7 @@ test("exports the production home page for GitHub Pages", async () => {
   assert.match(html, /Molina Hospitality Group/);
   assert.match(html, /Schedule a Consultation/);
   assert.match(html, /application\/ld\+json/);
-  assert.match(html, /href="\/MolinaHospitality\/about\//);
+  assert.match(html, /href="\/about\//);
   assert.doesNotMatch(html, /jordanvsmith\.chatgpt\.site/i);
   assert.doesNotMatch(html, /content placeholder|founder portrait placeholder|staged for backend/i);
 });
@@ -79,8 +79,8 @@ test("every sitemap URL has an exported page with core SEO signals", async () =>
   assert.ok(urls.length >= 35, "sitemap should contain the complete topical architecture");
 
   for (const url of urls) {
-    assert.equal(url.origin + "/MolinaHospitality", siteUrl);
-    const path = url.pathname.replace(/^\/MolinaHospitality/, "") || "/";
+    assert.equal(url.origin, siteUrl);
+    const path = url.pathname || "/";
     const html = await readOutput(path);
     assert.match(html, /<h1\b/i, `${path} should have one primary heading`);
     assert.match(html, /<title>[^<]+<\/title>/i, `${path} should have a title`);
